@@ -1,13 +1,6 @@
 export default {
   router: {
-    base: '/',
-    extendRoutes(routes, resolve) {
-      routes.push({
-        name: 'index',
-        path: '/inicio',
-        component: resolve(__dirname, 'views/index.vue')
-      })
-    }
+    base: '/',    
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {

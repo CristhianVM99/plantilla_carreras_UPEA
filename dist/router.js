@@ -251,10 +251,6 @@ export const routerOptions = {
     path: "/convocatoriasDetalle/:detalle?",
     component: _08cb70e4,
     name: "convocatoriasDetalle-detalle"
-  }, {
-    path: "/inicio",
-    component: _7e385cb3,
-    name: "index"
   }],
 
   fallback: false

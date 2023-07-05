@@ -71,11 +71,11 @@
   "Footer": {
     "description": "Auto imported from components/Footer/index.vue"
   },
-  "FooterArch": {
-    "description": "Auto imported from components/Footer-arch/index.vue"
-  },
   "FreelancreIntro": {
     "description": "Auto imported from components/Freelancre-intro/index.vue"
+  },
+  "FooterArch": {
+    "description": "Auto imported from components/Footer-arch/index.vue"
   },
   "FullTestimonials": {
     "description": "Auto imported from components/Full-testimonials/index.vue"
@@ -98,17 +98,17 @@
   "Intro3": {
     "description": "Auto imported from components/Intro3/index.vue"
   },
-  "Intro4": {
-    "description": "Auto imported from components/Intro4/index.vue"
-  },
   "Intro5": {
     "description": "Auto imported from components/Intro5/index.vue"
   },
-  "LatestNews": {
-    "description": "Auto imported from components/Latest-news/index.vue"
+  "Intro4": {
+    "description": "Auto imported from components/Intro4/index.vue"
   },
   "Loading": {
     "description": "Auto imported from components/Loading/index.vue"
+  },
+  "LatestNews": {
+    "description": "Auto imported from components/Latest-news/index.vue"
   },
   "MinimalArea1": {
     "description": "Auto imported from components/Minimal-area1/index.vue"
@@ -119,11 +119,11 @@
   "ModalVideo": {
     "description": "Auto imported from components/Modal-video/index.vue"
   },
-  "MouseCursor": {
-    "description": "Auto imported from components/Mouse-cursor/index.vue"
-  },
   "Navbar": {
     "description": "Auto imported from components/Navbar/index.vue"
+  },
+  "MouseCursor": {
+    "description": "Auto imported from components/Mouse-cursor/index.vue"
   },
   "NavbarFullMenu": {
     "description": "Auto imported from components/Navbar-full-menu/index.vue"
@@ -134,11 +134,11 @@
   "PageHeader": {
     "description": "Auto imported from components/Page-header/index.vue"
   },
-  "PagesHeader": {
-    "description": "Auto imported from components/Pages-header/index.vue"
-  },
   "Portfolio": {
     "description": "Auto imported from components/Portfolio/index.vue"
+  },
+  "PagesHeader": {
+    "description": "Auto imported from components/Pages-header/index.vue"
   },
   "ProjectDescription": {
     "description": "Auto imported from components/Project-description/index.vue"
@@ -149,11 +149,11 @@
   "ProjectGallery": {
     "description": "Auto imported from components/Project-gallery/index.vue"
   },
-  "ProjectIntroduction": {
-    "description": "Auto imported from components/Project-introduction/index.vue"
-  },
   "ProjectVideo": {
     "description": "Auto imported from components/Project-video/index.vue"
+  },
+  "ProjectIntroduction": {
+    "description": "Auto imported from components/Project-introduction/index.vue"
   },
   "SContactForm": {
     "description": "Auto imported from components/S-contact-form/index.vue"
@@ -191,11 +191,11 @@
   "Team1": {
     "description": "Auto imported from components/Team1/index.vue"
   },
-  "Team3": {
-    "description": "Auto imported from components/Team3/index.vue"
-  },
   "Team2": {
     "description": "Auto imported from components/Team2/index.vue"
+  },
+  "Team3": {
+    "description": "Auto imported from components/Team3/index.vue"
   },
   "TestimonialsArcho": {
     "description": "Auto imported from components/Testimonials-archo/index.vue"

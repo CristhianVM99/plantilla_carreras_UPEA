@@ -327,11 +327,5 @@
     "component": "/home/crismas/Pictures/vievue-10/vievue-10/Main_files/vie_vue/pages/convocatoriasDetalle/_detalle.vue",
     "chunkName": "pages/convocatoriasDetalle/_detalle",
     "_name": "_08cb70e4"
-  },
-  {
-    "name": "index",
-    "path": "/inicio",
-    "component": "/home/crismas/Pictures/vievue-10/vievue-10/Main_files/vie_vue/pages/index.vue",
-    "_name": "_7e385cb3"
   }
 ]
