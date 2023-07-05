@@ -5,7 +5,7 @@ export default {
       routes.push({
         name: 'index',
         path: '/inicio',
-        component: resolve(__dirname, 'pages/index.vue')
+        component: resolve(__dirname, 'views/index.vue')
       })
     }
   },
