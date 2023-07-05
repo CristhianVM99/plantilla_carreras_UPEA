@@ -1,7 +1,4 @@
-export default {
-  router: {
-    base: '/',    
-  },
+export default {  
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: "Vie ",
