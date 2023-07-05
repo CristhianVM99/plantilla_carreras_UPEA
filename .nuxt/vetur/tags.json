@@ -5,14 +5,14 @@
   "AboutUs1": {
     "description": "Auto imported from components/About-us1/index.vue"
   },
+  "AboutUs2": {
+    "description": "Auto imported from components/About-us2/index.vue"
+  },
   "AboutUs3": {
     "description": "Auto imported from components/About-us3/index.vue"
   },
   "AboutUs4": {
     "description": "Auto imported from components/About-us4/index.vue"
-  },
-  "AboutUs2": {
-    "description": "Auto imported from components/About-us2/index.vue"
   },
   "AboutUs5": {
     "description": "Auto imported from components/About-us5/index.vue"
@@ -218,11 +218,11 @@
   "Works1": {
     "description": "Auto imported from components/Works1/index.vue"
   },
-  "Works3": {
-    "description": "Auto imported from components/Works3/index.vue"
-  },
   "Works2": {
     "description": "Auto imported from components/Works2/index.vue"
+  },
+  "Works3": {
+    "description": "Auto imported from components/Works3/index.vue"
   },
   "Works4": {
     "description": "Auto imported from components/Works4/index.vue"
