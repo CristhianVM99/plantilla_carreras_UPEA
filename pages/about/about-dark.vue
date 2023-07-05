@@ -1,0 +1,89 @@
+<template>
+  <div>
+    <Navbar ref="navbar" />
+    <PagesHeader :imageLink="img_about">
+      <template v-slot:title>
+        {{carrera_nombre}}
+      </template>
+    </PagesHeader>
+    <AboutIntro />
+    <!--<Services1 oStyle="4item" />
+    <VideoWithTestimonials />
+    <SkillsCircle from="aboutPage" />
+    <Team1 />-->
+    <MinimalArea1 />
+    <!--<Clients1 theme="dark" />
+    <CallToAction />-->
+    <Footer />
+  </div>
+</template>
+
+<script>
+import { useInstitucionStore } from '@/store/store'
+export default {
+  layout: "dark",
+  async asyncData({ $axios }) {
+    try {
+      const useInstitucion = useInstitucionStore()     
+      if( useInstitucionStore().institucion == null || useInstitucionStore().fotosPagina ||  useInstitucionStore().fotosPortada ){      
+        const carrera_links_externos = await $axios.$get('/api/linksIntExtAll/' + process.env.APP_ID_INSTITUCION)
+        useInstitucion.asignarCarreraLinksExternos(carrera_links_externos)
+        const institucion = await $axios.$get('/api/InstitucionUPEA/' + process.env.APP_ID_INSTITUCION)        
+        let fotosPagina = institucion.Descripcion.portada.filter(port => port.portada_titulo === "PAGINA")
+        let fotosPortada = institucion.Descripcion.portada.filter(port => port.portada_titulo != "PAGINA")
+        useInstitucion.asignarInstitucion(institucion.Descripcion)
+        useInstitucion.asignarFotosPagina(fotosPagina)
+        useInstitucion.asignarFotosPortada(fotosPortada)
+        
+        return { fotosPagina, institucion }
+      }
+    } catch (e) {
+      console.error("error",e)
+    }
+  },
+  data() {
+    return {
+      carrera_nombre: useInstitucionStore().institucion.institucion_nombre,
+      img_about: '/img/universidad/about.jpg',
+      foto : useInstitucionStore().fotosPagina[4],
+      url_api : process.env.APP_ROOT_API,
+    }
+  },
+  head() {
+    return {
+      titleTemplate: '%s - About Dark'
+    };
+  },
+  methods: {
+    setFoto(){
+      if(this.foto != null && Object.keys(this.foto).length != 0){
+        this.img_about = `${this.url_api}/InstitucionUpea/Portada/${this.foto.portada_imagen}`
+      }
+    },
+    createdComponent(){
+      this.setFoto()
+    }
+  },
+  created() {
+    this.createdComponent()
+  },
+  mounted() {
+    var navbar = this.$refs.navbar.$el;
+    if (window.pageYOffset > 300) {
+      navbar.classList.add("nav-scroll");
+    } else {
+      navbar.classList.remove("nav-scroll");
+    }
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 300) {
+        navbar.classList.add("nav-scroll");
+      } else {
+        navbar.classList.remove("nav-scroll");
+      }
+    });
+  },
+};
+</script>
+
+<style scoped>
+</style>

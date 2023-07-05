@@ -1,0 +1,75 @@
+<template>
+    <div>
+      <div class="circle-bg">
+        <div class="circle-color fixed">
+          <div class="gradient-circle"></div>
+          <div class="gradient-circle two"></div>
+        </div>
+      </div>
+      <Navbar ref="navbar" lr="logoRef" />
+      <WorksHeader ref="fixedSlider" :title="title_categories" :text="text_categories" :Background="textBackground_categories"/>
+      <div ref="MainContent" class="main-content">
+        <Categories :grid="3" :hideFilter="true" filterPosition="center" />
+        <Footer />
+      </div>
+    </div>
+  </template>
+  
+  <script>
+  import { useInstitucionStore } from '@/store/store'
+  export default {
+    layout: "dark",
+    async asyncData({ $axios }) {        
+        try {         
+            const useInstitucion = useInstitucionStore()     
+            if( useInstitucionStore().institucion == null ){
+              const institucion = await $axios.$get('/api/InstitucionUPEA/' + process.env.APP_ID_INSTITUCION)              
+              useInstitucion.asignarInstitucion(institucion.Descripcion)
+            }            
+        } catch (e) {
+            console.error("error",e)
+        }
+    },
+    data() {
+        return {
+            carrera_nombre : useInstitucionStore().institucion.institucion_nombre,
+            institucion_logo : useInstitucionStore().institucion.institucion_logo,
+            url_api : process.env.APP_ROOT_API,
+            title_categories : useInstitucionStore().title_categories,
+            text_categories : useInstitucionStore().text_categories,
+            textBackground_categories : useInstitucionStore().textBackground_categories
+        }
+    },
+    head() {
+      return {
+        title: this.carrera_nombre+' | Categorias',
+        link: [
+          { rel: 'icon', type:"image/x-icon", href: this.url_api + '/InstitucionUpea/' + this.institucion_logo }
+        ]
+      }
+    },
+    mounted() {
+      if (this.$refs.fixedSlider.$el && this.$refs.MainContent) {
+        var slidHeight = this.$refs.fixedSlider.$el.offsetHeight;
+        this.$refs.MainContent.style.marginTop = slidHeight + "px";
+      }
+      var navbar = this.$refs.navbar.$el;
+      if (window.pageYOffset > 300) {
+        navbar.classList.add("nav-scroll");
+      } else {
+        navbar.classList.remove("nav-scroll");
+      }
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          navbar.classList.add("nav-scroll");
+        } else {
+          navbar.classList.remove("nav-scroll");
+        }
+      });
+    },
+  };
+  </script>
+  
+  <style scoped>
+  
+  </style>
