@@ -45,6 +45,9 @@ export const useInstitucionStore = defineStore("Institucion", {
     pretitle_autoridades : 'Nuestras',
     title_autoridades: 'Autoridades',
 
+    /* INDEX - CALL - ORGANIGRAMA */
+    title_index_organigrama: 'Organigrama de la carrera de',
+
     /*============================ CATEGORIES ============================== */
     title_categories: 'Categorias',
     text_categories: 'Estudiar en la Universidad Pública de El Alto es un privilegio que implica responsabilidad y entrega, pero también es una oportunidad para crecer y alcanzar nuestros sueños.',

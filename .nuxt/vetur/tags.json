@@ -8,11 +8,11 @@
   "AboutUs3": {
     "description": "Auto imported from components/About-us3/index.vue"
   },
-  "AboutUs2": {
-    "description": "Auto imported from components/About-us2/index.vue"
-  },
   "AboutUs4": {
     "description": "Auto imported from components/About-us4/index.vue"
+  },
+  "AboutUs2": {
+    "description": "Auto imported from components/About-us2/index.vue"
   },
   "AboutUs5": {
     "description": "Auto imported from components/About-us5/index.vue"
@@ -98,26 +98,26 @@
   "Intro3": {
     "description": "Auto imported from components/Intro3/index.vue"
   },
-  "Intro5": {
-    "description": "Auto imported from components/Intro5/index.vue"
-  },
   "Intro4": {
     "description": "Auto imported from components/Intro4/index.vue"
+  },
+  "Intro5": {
+    "description": "Auto imported from components/Intro5/index.vue"
   },
   "LatestNews": {
     "description": "Auto imported from components/Latest-news/index.vue"
   },
-  "MinimalArea1": {
-    "description": "Auto imported from components/Minimal-area1/index.vue"
-  },
   "Loading": {
     "description": "Auto imported from components/Loading/index.vue"
   },
-  "ModalVideo": {
-    "description": "Auto imported from components/Modal-video/index.vue"
+  "MinimalArea1": {
+    "description": "Auto imported from components/Minimal-area1/index.vue"
   },
   "MinimalArea2": {
     "description": "Auto imported from components/Minimal-area2/index.vue"
+  },
+  "ModalVideo": {
+    "description": "Auto imported from components/Modal-video/index.vue"
   },
   "MouseCursor": {
     "description": "Auto imported from components/Mouse-cursor/index.vue"
@@ -146,11 +146,11 @@
   "ProjectDetails2Header": {
     "description": "Auto imported from components/Project-details2-header/index.vue"
   },
-  "ProjectIntroduction": {
-    "description": "Auto imported from components/Project-introduction/index.vue"
-  },
   "ProjectGallery": {
     "description": "Auto imported from components/Project-gallery/index.vue"
+  },
+  "ProjectIntroduction": {
+    "description": "Auto imported from components/Project-introduction/index.vue"
   },
   "ProjectVideo": {
     "description": "Auto imported from components/Project-video/index.vue"
@@ -167,17 +167,17 @@
   "Services2": {
     "description": "Auto imported from components/Services2/index.vue"
   },
-  "Services4": {
-    "description": "Auto imported from components/Services4/index.vue"
-  },
   "Services3": {
     "description": "Auto imported from components/Services3/index.vue"
   },
-  "Services6": {
-    "description": "Auto imported from components/Services6/index.vue"
+  "Services4": {
+    "description": "Auto imported from components/Services4/index.vue"
   },
   "Services5": {
     "description": "Auto imported from components/Services5/index.vue"
+  },
+  "Services6": {
+    "description": "Auto imported from components/Services6/index.vue"
   },
   "ShowcasesFullScreen": {
     "description": "Auto imported from components/Showcases-full-screen/index.vue"
@@ -206,11 +206,11 @@
   "VideoWithTestimonials": {
     "description": "Auto imported from components/Video-with-testimonials/index.vue"
   },
-  "WorksStyle1": {
-    "description": "Auto imported from components/Works-style1/index.vue"
-  },
   "WorksHeader": {
     "description": "Auto imported from components/Works-header/index.vue"
+  },
+  "WorksStyle1": {
+    "description": "Auto imported from components/Works-style1/index.vue"
   },
   "WorksStyle2": {
     "description": "Auto imported from components/Works-style2/index.vue"
@@ -218,11 +218,11 @@
   "Works1": {
     "description": "Auto imported from components/Works1/index.vue"
   },
-  "Works2": {
-    "description": "Auto imported from components/Works2/index.vue"
-  },
   "Works3": {
     "description": "Auto imported from components/Works3/index.vue"
+  },
+  "Works2": {
+    "description": "Auto imported from components/Works2/index.vue"
   },
   "Works4": {
     "description": "Auto imported from components/Works4/index.vue"

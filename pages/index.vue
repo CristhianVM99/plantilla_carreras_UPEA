@@ -4,8 +4,9 @@
       <IntroWithSlider ref="fixedSlider" />
       <div class="main-content" ref="MainContent">
         <AboutUs1 />
-        <!--<Services1 />-->        
-        <VideoWithTestimonials />
+        <!--<Services1 />-->     
+        <CallToAction />   
+        <VideoWithTestimonials />        
         <Blogs1 tipo="autoridades"/>
         <!--<FunFacts1 />-->        
         <!--<SkillsCircle theme="dark" />-->        
@@ -14,10 +15,9 @@
         <Blogs1 tipo="convocatorias"/>
         <div v-if="foto != null && Object.keys(foto).length != 0" :style="`background-image: url(${url_api + '/InstitucionUpea/Portada/' + foto.portada_imagen});`" class="intermedio"></div>
         <div v-else class="intermedio"></div>
-        <Blogs1 tipo="cursos"/>
+        <Blogs1 tipo="cursos"/>        
         <Clients1 theme="dark" />
-        <!--<Works1 />-->
-        <!--<CallToAction />-->
+        <!--<Works1 />-->        
         <Footer />
       </div>
     </div>

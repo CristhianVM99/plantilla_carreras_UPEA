@@ -41,13 +41,19 @@ export default {
   },
   data() {
     return {
-      mapa : useInstitucionStore().institucion.institucion_api_google_map
+      mapa : useInstitucionStore().institucion.institucion_api_google_map,
+      url_api : process.env.APP_ROOT_API,
+      carrera_titulo: useInstitucionStore().institucion.institucion_nombre,
+      institucion_logo : useInstitucionStore().institucion.institucion_logo,
     }
   },
   head() {
     return {
-      titleTemplate: '%s - Contact Dark'
-    };
+      title: this.carrera_titulo+' | '+this.$route.params.categoria,
+      link: [
+        { rel: 'icon', type:"image/x-icon", href: this.url_api + '/InstitucionUpea/' + this.institucion_logo }
+      ]
+    }
   },
   mounted() {
     var navbar = this.$refs.navbar.$el;

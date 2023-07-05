@@ -58,7 +58,8 @@ export default {
     {
       src: "~/plugins/vueTyper.js",
       mode: "client",
-    },
+    },    
+    { src: '~/plugins/vue-pdf', mode: 'client' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

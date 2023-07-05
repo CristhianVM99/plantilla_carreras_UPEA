@@ -1104,7 +1104,13 @@
           </div>
           <div class="post" v-if="tipo == 'gacetas'">
             <div class="img">
-              <span>{{ colection[0].gaceta_documento }}</span>
+              <vue-pdf
+                  ref="pdf"
+                  :src="url_api + '/Gaceta/' + colection[0].gaceta_documento"
+                  :page="1"
+                  :original-size="true"
+                  class="pdf-viewer"
+                ></vue-pdf>
             </div>
             <div class="content pt-60">
               <div class="row justify-content-center">
@@ -1117,7 +1123,10 @@
                     <h6>Mas Informacion</h6>
                     <p>
                       Fecha de Publicacion : {{ convertirFecha(colection[0].gaceta_fecha) }}<br>                      
-                    </p>                    
+                    </p>           
+                    <a target="_blank" :href="url_api + '/Gaceta/' + colection[0].gaceta_documento" class="butn bord curve mt-30">
+                      Descargar PDF
+                    </a>         
 
                     <!--<ul>
                       <li><span>01</span> Integer in volutpat libero.</li>

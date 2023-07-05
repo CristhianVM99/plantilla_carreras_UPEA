@@ -17,6 +17,7 @@
   </template>
   
   <script>
+  import CryptoJS from 'crypto-js'
   import { useInstitucionStore } from '@/store/store'
   export default {
     layout: 'dark',
@@ -80,40 +81,46 @@
         }
     },
     methods: {
+      decryptID(ciphertext) {
+        const encryptionKey = 'UniversidadPublicaDeElAlto'; // Cambia esto por tu clave de encriptación
+        const bytes = CryptoJS.AES.decrypt(ciphertext, encryptionKey);
+        const decryptedID = bytes.toString(CryptoJS.enc.Utf8);
+        return decryptedID;
+      },
         createdComponent(){
             switch (this.$route.params.detalle) {
                 case "convocatorias":
-                    this.colection = useInstitucionStore().carrera_convocatorias.filter(conv => conv.idconvocatorias == this.$route.query.id)
+                    this.colection = useInstitucionStore().carrera_convocatorias.filter(conv => conv.idconvocatorias == this.decryptID(this.$route.query.id))
                     break;            
                 case "comunicados":
-                    this.colection = useInstitucionStore().carrera_comunicados.filter(conv => conv.idconvocatorias == this.$route.query.id)
+                    this.colection = useInstitucionStore().carrera_comunicados.filter(conv => conv.idconvocatorias == this.decryptID(this.$route.query.id))
                     break;
                 case "avisos":
-                    this.colection = useInstitucionStore().carrera_avisos.filter(conv => conv.idconvocatorias == this.$route.query.id)
+                    this.colection = useInstitucionStore().carrera_avisos.filter(conv => conv.idconvocatorias == this.decryptID(this.$route.query.id))
                     break;
                 case "cursos":
-                    this.colection = useInstitucionStore().carrera_cursos.filter(conv => conv.iddetalle_cursos_academicos == this.$route.query.id)
+                    this.colection = useInstitucionStore().carrera_cursos.filter(conv => conv.iddetalle_cursos_academicos == this.decryptID(this.$route.query.id))
                     break;
                 case "seminarios":
-                    this.colection = useInstitucionStore().carrera_seminarios.filter(conv => conv.iddetalle_cursos_academicos == this.$route.query.id)
+                    this.colection = useInstitucionStore().carrera_seminarios.filter(conv => conv.iddetalle_cursos_academicos == this.decryptID(this.$route.query.id))
                     break;
                 case "servicios":
-                    this.colection = useInstitucionStore().carrera_servicios.filter(conv => conv.serv_id == this.$route.query.id)
+                    this.colection = useInstitucionStore().carrera_servicios.filter(conv => conv.serv_id == this.decryptID(this.$route.query.id))
                     break;
                 case "ofertasacademicas":
-                    this.colection = useInstitucionStore().carrera_ofertasacademicas.filter(conv => conv.ofertas_id == this.$route.query.id) 
+                    this.colection = useInstitucionStore().carrera_ofertasacademicas.filter(conv => conv.ofertas_id == this.decryptID(this.$route.query.id)) 
                     break;
                 case "publicaciones":
-                    this.colection = useInstitucionStore().carrera_publicaciones.filter(conv => conv.publicaciones_id == this.$route.query.id)                     
+                    this.colection = useInstitucionStore().carrera_publicaciones.filter(conv => conv.publicaciones_id == this.decryptID(this.$route.query.id))                     
                     break;
                 case "gacetas":
-                    this.colection = useInstitucionStore().carrera_gacetas.filter(conv => conv.gaceta_id == this.$route.query.id)                     
+                    this.colection = useInstitucionStore().carrera_gacetas.filter(conv => conv.gaceta_id == this.decryptID(this.$route.query.id))                     
                     break;
                 case "eventos":
-                    this.colection = useInstitucionStore().carrera_eventos.filter(conv => conv.evento_id == this.$route.query.id)                     
+                    this.colection = useInstitucionStore().carrera_eventos.filter(conv => conv.evento_id == this.decryptID(this.$route.query.id))                     
                     break;
                 case "videos":
-                    this.colection = useInstitucionStore().carrera_videos.filter(conv => conv.video_id == this.$route.query.id)                     
+                    this.colection = useInstitucionStore().carrera_videos.filter(conv => conv.video_id == this.decryptID(this.$route.query.id))                     
                     break;
                 default:
                     break;

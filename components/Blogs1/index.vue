@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-4" v-for="(conv) in carrera_convocatorias.slice(0, 1)" :key="conv.idconvocatorias">
+        <div class="col-lg-4" v-for="(conv) in carrera_convocatorias.slice(0, 1)" :key="encryptID(conv.idconvocatorias)">
           <div class="item md-mb50 wow fadeInUp" data-wow-delay=".3s">
             <div class="img">
               <img class="img-style" :src="url_api + '/Convocatorias/' + conv.con_foto_portada" alt="" />
@@ -19,27 +19,27 @@
             <div class="cont">
               <div>
                 <div class="info">
-                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/convocatorias', query: { id: conv.idconvocatorias }}" class="date">
+                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/convocatorias', query: { id: encryptID(conv.idconvocatorias) }}" class="date">
                     <span>{{ convertirFecha(conv.con_fecha_inicio) }}</span>
                   </NuxtLink>
                   <span>/</span>
-                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/convocatorias', query: { id: conv.idconvocatorias }}" class="tag">
+                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/convocatorias', query: { id: encryptID(conv.idconvocatorias) }}" class="tag">
                     <span>{{ conv.tipo_conv_comun.tipo_conv_comun_titulo }}</span>
                   </NuxtLink>
                 </div>
                 <h5>
-                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/convocatorias', query: { id: conv.idconvocatorias }}">
+                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/convocatorias', query: { id: encryptID(conv.idconvocatorias) }}">
                     {{ conv.con_titulo }}
                   </NuxtLink>
                 </h5>
                 <div class="btn-more">
-                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/convocatorias', query: { id: conv.idconvocatorias }}" class="simple-btn"> Mas Detalles </NuxtLink>
+                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/convocatorias', query: { id: encryptID(conv.idconvocatorias) }}" class="simple-btn"> Mas Detalles </NuxtLink>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-4" v-for="(com) in carrera_comunicados.slice(0, 1)" :key="com.idconvocatorias">
+        <div class="col-lg-4" v-for="(com) in carrera_comunicados.slice(0, 1)" :key="encryptID(com.idconvocatorias)">
           <div class="item md-mb50 wow fadeInUp" data-wow-delay=".5s">
             <div class="img">
               <img class="img-style" :src="url_api + '/Convocatorias/' + com.con_foto_portada" alt="" />
@@ -47,27 +47,27 @@
             <div class="cont">
               <div>
                 <div class="info">
-                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/comunicados', query: { id: com.idconvocatorias }}" class="date">
+                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/comunicados', query: { id: encryptID(com.idconvocatorias) }}" class="date">
                     <span>{{ convertirFecha(com.con_fecha_inicio) }}</span>
                   </NuxtLink>
                   <span>/</span>
-                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/comunicados', query: { id: com.idconvocatorias }}" class="tag">
+                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/comunicados', query: { id: encryptID(com.idconvocatorias) }}" class="tag">
                     <span>{{ com.tipo_conv_comun.tipo_conv_comun_titulo}}</span>
                   </NuxtLink>
                 </div>
                 <h5>
-                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/comunicados', query: { id: com.idconvocatorias }}">
+                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/comunicados', query: { id: encryptID(com.idconvocatorias) }}">
                     {{ com.con_titulo }}
                   </NuxtLink>
                 </h5>
                 <div class="btn-more">
-                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/comunicados', query: { id: com.idconvocatorias }}" class="simple-btn"> Mas Detalles </NuxtLink>
+                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/comunicados', query: { id: encryptID(com.idconvocatorias) }}" class="simple-btn"> Mas Detalles </NuxtLink>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-4"  v-for="(avi) in carrera_avisos.slice(0, 1)" :key="avi.idconvocatorias">
+        <div class="col-lg-4"  v-for="(avi) in carrera_avisos.slice(0, 1)" :key="encryptID(avi.idconvocatorias)">
           <div class="item md-mb50 wow fadeInUp" data-wow-delay=".5s">
             <div class="img">
               <img class="img-style" style="" :src="url_api + '/Convocatorias/' + avi.con_foto_portada" alt="" />
@@ -75,21 +75,21 @@
             <div class="cont">
               <div>
                 <div class="info">
-                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/avisos', query: { id: avi.idconvocatorias }}" class="date">
+                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/avisos', query: { id: encryptID(avi.idconvocatorias) }}" class="date">
                     <span>{{ convertirFecha(avi.con_fecha_inicio) }}</span>
                   </NuxtLink>
                   <span>/</span>
-                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/avisos', query: { id: avi.idconvocatorias }}" class="tag">
+                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/avisos', query: { id: encryptID(avi.idconvocatorias) }}" class="tag">
                     <span>{{ avi.tipo_conv_comun.tipo_conv_comun_titulo }}</span>
                   </NuxtLink>
                 </div>
                 <h5>
-                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/avisos', query: { id: avi.idconvocatorias }}">
+                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/avisos', query: { id: encryptID(avi.idconvocatorias) }}">
                     {{ avi.con_titulo }}
                   </NuxtLink>
                 </h5>
                 <div class="btn-more">
-                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/avisos', query: { id: avi.idconvocatorias }}" class="simple-btn"> Mas Detalles </NuxtLink>
+                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/avisos', query: { id: encryptID(avi.idconvocatorias) }}" class="simple-btn"> Mas Detalles </NuxtLink>
                 </div>
               </div>
             </div>
@@ -108,7 +108,7 @@
       </div>
       <div class="row">
         <div class="col-lg-2"></div>
-        <div class="col-lg-4" v-for="(cur) in carrera_cursos.slice(0, 1)" :key="cur.iddetalle_cursos_academicos"> 
+        <div class="col-lg-4" v-for="(cur) in carrera_cursos.slice(0, 1)" :key="encryptID(cur.iddetalle_cursos_academicos)"> 
           <div class="item md-mb50 wow fadeInUp" data-wow-delay=".3s">
             <div class="img">
               <img class="img-style" :src="url_api + '/Cursos/' + cur.det_img_portada" alt="" />
@@ -116,27 +116,27 @@
             <div class="cont">
               <div>
                 <div class="info">
-                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/cursos', query: { id: cur.iddetalle_cursos_academicos }}" class="date">
+                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/cursos', query: { id: encryptID(cur.iddetalle_cursos_academicos) }}" class="date">
                     <span>{{ convertirFecha(cur.det_fecha_ini) }}</span>
                   </NuxtLink>
                   <span>/</span>
-                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/cursos', query: { id: cur.iddetalle_cursos_academicos }}" class="tag">
+                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/cursos', query: { id: encryptID(cur.iddetalle_cursos_academicos) }}" class="tag">
                     <span>Cursos</span>
                   </NuxtLink>
                 </div>
                 <h5>
-                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/cursos', query: { id: cur.iddetalle_cursos_academicos }}">
+                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/cursos', query: { id: encryptID(cur.iddetalle_cursos_academicos) }}">
                     {{ cur.det_titulo }}
                   </NuxtLink>
                 </h5>
                 <div class="btn-more">
-                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/cursos', query: { id: cur.iddetalle_cursos_academicos }}" class="simple-btn"> Mas detalles </NuxtLink>
+                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/cursos', query: { id: encryptID(cur.iddetalle_cursos_academicos) }}" class="simple-btn"> Mas detalles </NuxtLink>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-4" v-for="(sem) in carrera_seminarios.slice(0, 1)" :key="sem.iddetalle_cursos_academicos">
+        <div class="col-lg-4" v-for="(sem) in carrera_seminarios.slice(0, 1)" :key="encryptID(sem.iddetalle_cursos_academicos)">
           <div class="item md-mb50 wow fadeInUp" data-wow-delay=".5s">
             <div class="img">
               <img class="img-style" :src="url_api + '/Cursos/' + sem.det_img_portada" alt="" />
@@ -144,21 +144,21 @@
             <div class="cont">
               <div>
                 <div class="info">
-                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/seminarios', query: { id: sem.iddetalle_cursos_academicos }}" class="date">
+                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/seminarios', query: { id: encryptID(sem.iddetalle_cursos_academicos) }}" class="date">
                     <span>{{ convertirFecha(sem.det_fecha_ini) }}</span>
                   </NuxtLink>
                   <span>/</span>
-                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/seminarios', query: { id: sem.iddetalle_cursos_academicos }}" class="tag">
+                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/seminarios', query: { id: encryptID(sem.iddetalle_cursos_academicos) }}" class="tag">
                     <span>Seminarios</span>
                   </NuxtLink>
                 </div>
                 <h5>
-                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/seminarios', query: { id: sem.iddetalle_cursos_academicos }}">
+                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/seminarios', query: { id: encryptID(sem.iddetalle_cursos_academicos) }}">
                     {{ sem.det_titulo }}
                   </NuxtLink>
                 </h5>
                 <div class="btn-more">
-                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/seminarios', query: { id: sem.iddetalle_cursos_academicos }}" class="simple-btn"> Mas detalles </NuxtLink>
+                  <NuxtLink :to="{ path: '/ConvocatoriasDetalle/seminarios', query: { id: encryptID(sem.iddetalle_cursos_academicos) }}" class="simple-btn"> Mas detalles </NuxtLink>
                 </div>
               </div>
             </div>
@@ -177,7 +177,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-4" v-for="(aut) in institucion.autoridad" :key="aut.id_autoridad">
+        <div class="col-lg-4" v-for="(aut) in institucion.autoridad" :key="encryptID(aut.id_autoridad)">
           <div class="item md-mb50 wow fadeInUp" data-wow-delay=".3s">
             <div class="img">
               <img class="img-style" :src="url_api + '/InstitucionUpea/Autoridad/' + aut.foto_autoridad" alt="" />
@@ -253,6 +253,7 @@
 </template>
 
 <script>
+import CryptoJS from 'crypto-js'
 import { useInstitucionStore } from '@/store/store'
 export default {
   props:['tipo'],
@@ -280,7 +281,12 @@ export default {
       const mes = fechaObjeto.getMonth() + 1;
       const año = fechaObjeto.getFullYear();
       return `${dia}/${mes}/${año}`;
-    }
+    },
+    encryptID(id) {
+      const encryptionKey = 'UniversidadPublicaDeElAlto' // Cambia esto por tu clave de encriptación
+      const ciphertext = CryptoJS.AES.encrypt(id.toString(), encryptionKey).toString()
+      return ciphertext
+    },
   },  
 };
 </script>

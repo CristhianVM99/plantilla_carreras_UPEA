@@ -22,6 +22,7 @@ import nuxt_plugin_vueAwesomeSwiper_282933cc from 'nuxt_plugin_vueAwesomeSwiper_
 import nuxt_plugin_vueSlickCarousel_c20e2362 from 'nuxt_plugin_vueSlickCarousel_c20e2362' // Source: ../plugins/vueSlickCarousel.js (mode: 'all')
 import nuxt_plugin_vueEllipseProgress_6ae57c5c from 'nuxt_plugin_vueEllipseProgress_6ae57c5c' // Source: ../plugins/vueEllipseProgress.js (mode: 'client')
 import nuxt_plugin_vueTyper_62ae74ef from 'nuxt_plugin_vueTyper_62ae74ef' // Source: ../plugins/vueTyper.js (mode: 'client')
+import nuxt_plugin_vuepdf_163aeff5 from 'nuxt_plugin_vuepdf_163aeff5' // Source: ../plugins/vue-pdf (mode: 'client')
 import nuxt_plugin_meta_44d27d6f from 'nuxt_plugin_meta_44d27d6f' // Source: ./composition-api/meta.mjs (mode: 'all')
 
 // Component: <ClientOnly>
@@ -226,6 +227,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (process.client && typeof nuxt_plugin_vueTyper_62ae74ef === 'function') {
     await nuxt_plugin_vueTyper_62ae74ef(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_vuepdf_163aeff5 === 'function') {
+    await nuxt_plugin_vuepdf_163aeff5(app.context, inject)
   }
 
   if (typeof nuxt_plugin_meta_44d27d6f === 'function') {

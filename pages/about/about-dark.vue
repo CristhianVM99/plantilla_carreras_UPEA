@@ -47,12 +47,17 @@ export default {
       img_about: '/img/universidad/about.jpg',
       foto : useInstitucionStore().fotosPagina[4],
       url_api : process.env.APP_ROOT_API,
+      carrera_titulo: useInstitucionStore().institucion.institucion_nombre,
+      institucion_logo : useInstitucionStore().institucion.institucion_logo,
     }
   },
   head() {
     return {
-      titleTemplate: '%s - About Dark'
-    };
+      title: this.carrera_titulo+' | '+this.$route.params.categoria,
+      link: [
+        { rel: 'icon', type:"image/x-icon", href: this.url_api + '/InstitucionUpea/' + this.institucion_logo }
+      ]
+    }
   },
   methods: {
     setFoto(){

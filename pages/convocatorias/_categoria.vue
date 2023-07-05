@@ -19,7 +19,7 @@
     </div>
   </template>
   
-  <script>
+  <script>  
   import { useInstitucionStore } from '@/store/store'
   export default {
     layout: 'dark',
@@ -83,7 +83,7 @@
         message: 'No hay Registros...'
       };
     },
-    methods: {      
+    methods: {          
       createdComponent(){
         switch (this.$route.params.categoria) {
           case "comunicados":

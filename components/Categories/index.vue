@@ -329,9 +329,11 @@
       const useInstitucion = useInstitucionStore()     
       if( useInstitucionStore().institucion == null ){
         const institucion = await $axios.$get('/api/InstitucionUPEA/' + process.env.APP_ID_INSTITUCION)                
-        useInstitucion.asignarInstitucion(institucion.Descripcion)
+        const carrera_links_externos = await $axios.$get('/api/linksIntExtAll/' + process.env.APP_ID_INSTITUCION)
+        useInstitucion.asignarInstitucion(institucion.Descripcion)        
+        useInstitucion.asignarCarreraLinksExternos(carrera_links_externos)
       }
-    },
+    },    
     data() {
         return {
             carrera_nombre: useInstitucionStore().institucion.institucion_nombre,

@@ -102,9 +102,9 @@
             <div class="copy-right">
               <p>
                 © 2023, Todos los derechos reservados 
-                <NuxtLink to="/">Universidad Publica de El Alto</NuxtLink>.
+                <span >Universidad Publica de El Alto</span>.
               </p>
-              <p>Desarrollador <a href="#">Cvm</a></p>
+              <p>Desarrollador <a target="_blank" href="https://www.facebook.com/profile.php?id=100008367045999">Cvm</a></p>
             </div>
           </div>
         </div>
