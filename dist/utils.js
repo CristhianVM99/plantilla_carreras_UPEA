@@ -199,7 +199,7 @@ export async function setContext (app, context) {
       payload: context.payload,
       error: context.error,
       base: app.router.options.base,
-      env: {"APP_ROOT_API":"https://serviciopagina.upea.bo","APP_ADMIN_API":"http://administracionpaginas.upea.edu.bo/login","APP_ANIVERSARIO_UPEA":"25","APP_ID_INSTITUCION":"10","APP_ID_CARRERA":"20"}
+      env: {"APP_ROOT_API":"https://serviciopagina.upea.bo","APP_ADMIN_API":"http://administracionpaginas.upea.edu.bo/login","APP_ANIVERSARIO_UPEA":"25","APP_ID_INSTITUCION":"7","APP_ID_CARRERA":"1"}
     }
     // Only set once
 
