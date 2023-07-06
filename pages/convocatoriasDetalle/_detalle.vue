@@ -73,12 +73,13 @@
         }
     },    
     data() {
-        return {
-            carrera_nombre : useInstitucionStore().institucion.institucion_nombre,
-            institucion_logo : useInstitucionStore().institucion.institucion_logo,
-            url_api : process.env.APP_ROOT_API,
-            colection : null,
-        }
+      return {
+          carrera_nombre : useInstitucionStore().institucion.institucion_nombre,
+          institucion_logo : useInstitucionStore().institucion.institucion_logo,
+          url_api : process.env.APP_ROOT_API,
+          colection : null,
+          carrera_colores : useInstitucionStore().institucion.colorinstitucion,
+      }
     },
     methods: {
       decryptID(ciphertext) {
@@ -87,45 +88,67 @@
         const decryptedID = bytes.toString(CryptoJS.enc.Utf8);
         return decryptedID;
       },
-        createdComponent(){
-            switch (this.$route.params.detalle) {
-                case "convocatorias":
-                    this.colection = useInstitucionStore().carrera_convocatorias.filter(conv => conv.idconvocatorias == this.decryptID(this.$route.query.id))
-                    break;            
-                case "comunicados":
-                    this.colection = useInstitucionStore().carrera_comunicados.filter(conv => conv.idconvocatorias == this.decryptID(this.$route.query.id))
-                    break;
-                case "avisos":
-                    this.colection = useInstitucionStore().carrera_avisos.filter(conv => conv.idconvocatorias == this.decryptID(this.$route.query.id))
-                    break;
-                case "cursos":
-                    this.colection = useInstitucionStore().carrera_cursos.filter(conv => conv.iddetalle_cursos_academicos == this.decryptID(this.$route.query.id))
-                    break;
-                case "seminarios":
-                    this.colection = useInstitucionStore().carrera_seminarios.filter(conv => conv.iddetalle_cursos_academicos == this.decryptID(this.$route.query.id))
-                    break;
-                case "servicios":
-                    this.colection = useInstitucionStore().carrera_servicios.filter(conv => conv.serv_id == this.decryptID(this.$route.query.id))
-                    break;
-                case "ofertasacademicas":
-                    this.colection = useInstitucionStore().carrera_ofertasacademicas.filter(conv => conv.ofertas_id == this.decryptID(this.$route.query.id)) 
-                    break;
-                case "publicaciones":
-                    this.colection = useInstitucionStore().carrera_publicaciones.filter(conv => conv.publicaciones_id == this.decryptID(this.$route.query.id))                     
-                    break;
-                case "gacetas":
-                    this.colection = useInstitucionStore().carrera_gacetas.filter(conv => conv.gaceta_id == this.decryptID(this.$route.query.id))                     
-                    break;
-                case "eventos":
-                    this.colection = useInstitucionStore().carrera_eventos.filter(conv => conv.evento_id == this.decryptID(this.$route.query.id))                     
-                    break;
-                case "videos":
-                    this.colection = useInstitucionStore().carrera_videos.filter(conv => conv.video_id == this.decryptID(this.$route.query.id))                     
-                    break;
-                default:
-                    break;
-            }
+      setColor(){
+        if (Object.keys(this.carrera_colores).length != 0) {
+        if (process.client) { // Verifica si el código se está ejecutando en el lado del cliente
+          document.documentElement.style.setProperty(
+            '--color-primario',
+            this.carrera_colores[0].color_primario
+          );
+          document.documentElement.style.setProperty(
+            '--color-secundario',
+            this.carrera_colores[0].color_primario
+          );
+          document.documentElement.style.setProperty(
+            '--color-terciario',
+            this.carrera_colores[0].color_secundario
+          );
         }
+        }
+      }, 
+      getDetalle(){
+        switch (this.$route.params.detalle) {
+          case "convocatorias":
+              this.colection = useInstitucionStore().carrera_convocatorias.filter(conv => conv.idconvocatorias == this.decryptID(this.$route.query.id))
+              break;            
+          case "comunicados":
+              this.colection = useInstitucionStore().carrera_comunicados.filter(conv => conv.idconvocatorias == this.decryptID(this.$route.query.id))
+              break;
+          case "avisos":
+              this.colection = useInstitucionStore().carrera_avisos.filter(conv => conv.idconvocatorias == this.decryptID(this.$route.query.id))
+              break;
+          case "cursos":
+              this.colection = useInstitucionStore().carrera_cursos.filter(conv => conv.iddetalle_cursos_academicos == this.decryptID(this.$route.query.id))
+              break;
+          case "seminarios":
+              this.colection = useInstitucionStore().carrera_seminarios.filter(conv => conv.iddetalle_cursos_academicos == this.decryptID(this.$route.query.id))
+              break;
+          case "servicios":
+              this.colection = useInstitucionStore().carrera_servicios.filter(conv => conv.serv_id == this.decryptID(this.$route.query.id))
+              break;
+          case "ofertasacademicas":
+              this.colection = useInstitucionStore().carrera_ofertasacademicas.filter(conv => conv.ofertas_id == this.decryptID(this.$route.query.id)) 
+              break;
+          case "publicaciones":
+              this.colection = useInstitucionStore().carrera_publicaciones.filter(conv => conv.publicaciones_id == this.decryptID(this.$route.query.id))                     
+              break;
+          case "gacetas":
+              this.colection = useInstitucionStore().carrera_gacetas.filter(conv => conv.gaceta_id == this.decryptID(this.$route.query.id))                     
+              break;
+          case "eventos":
+              this.colection = useInstitucionStore().carrera_eventos.filter(conv => conv.evento_id == this.decryptID(this.$route.query.id))                     
+              break;
+          case "videos":
+              this.colection = useInstitucionStore().carrera_videos.filter(conv => conv.video_id == this.decryptID(this.$route.query.id))                     
+              break;
+          default:
+              break;
+        }
+      },
+      createdComponent(){
+        this.setColor()
+        this.getDetalle()    
+      }
     },
     created() {
         this.createdComponent()

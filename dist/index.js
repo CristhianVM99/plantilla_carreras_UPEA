@@ -12,18 +12,18 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_893ddc16 from 'nuxt_plugin_plugin_893ddc16' // Source: ./components/plugin.js (mode: 'all')
-import nuxt_plugin_plugin_4ecb7f1d from 'nuxt_plugin_plugin_4ecb7f1d' // Source: ./composition-api/plugin.mjs (mode: 'all')
-import nuxt_plugin_axios_188276ea from 'nuxt_plugin_axios_188276ea' // Source: ./axios.js (mode: 'all')
-import nuxt_plugin_vuescrollto_71831f1e from 'nuxt_plugin_vuescrollto_71831f1e' // Source: ./vue-scrollto.js (mode: 'client')
-import nuxt_plugin_distplugin1f96797e_30c14ef2 from 'nuxt_plugin_distplugin1f96797e_30c14ef2' // Source: ./dist.plugin.1f96797e.mjs (mode: 'all')
+import nuxt_plugin_plugin_3c5bce70 from 'nuxt_plugin_plugin_3c5bce70' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_plugin_1ba2dbb0 from 'nuxt_plugin_plugin_1ba2dbb0' // Source: ./composition-api/plugin.mjs (mode: 'all')
+import nuxt_plugin_axios_2205a044 from 'nuxt_plugin_axios_2205a044' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_vuescrollto_7f703f2a from 'nuxt_plugin_vuescrollto_7f703f2a' // Source: ./vue-scrollto.js (mode: 'client')
+import nuxt_plugin_distplugin1f96797e_648a844c from 'nuxt_plugin_distplugin1f96797e_648a844c' // Source: ./dist.plugin.1f96797e.mjs (mode: 'all')
 import nuxt_plugin_particles_1e1352c0 from 'nuxt_plugin_particles_1e1352c0' // Source: ../plugins/particles.js (mode: 'all')
 import nuxt_plugin_vueAwesomeSwiper_282933cc from 'nuxt_plugin_vueAwesomeSwiper_282933cc' // Source: ../plugins/vueAwesomeSwiper.js (mode: 'all')
 import nuxt_plugin_vueSlickCarousel_c20e2362 from 'nuxt_plugin_vueSlickCarousel_c20e2362' // Source: ../plugins/vueSlickCarousel.js (mode: 'all')
 import nuxt_plugin_vueEllipseProgress_6ae57c5c from 'nuxt_plugin_vueEllipseProgress_6ae57c5c' // Source: ../plugins/vueEllipseProgress.js (mode: 'client')
 import nuxt_plugin_vueTyper_62ae74ef from 'nuxt_plugin_vueTyper_62ae74ef' // Source: ../plugins/vueTyper.js (mode: 'client')
 import nuxt_plugin_vuepdfembed_366df154 from 'nuxt_plugin_vuepdfembed_366df154' // Source: ../plugins/vue-pdf-embed.js (mode: 'client')
-import nuxt_plugin_meta_44d27d6f from 'nuxt_plugin_meta_44d27d6f' // Source: ./composition-api/meta.mjs (mode: 'all')
+import nuxt_plugin_meta_2aede2c2 from 'nuxt_plugin_meta_2aede2c2' // Source: ./composition-api/meta.mjs (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -189,24 +189,24 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_893ddc16 === 'function') {
-    await nuxt_plugin_plugin_893ddc16(app.context, inject)
+  if (typeof nuxt_plugin_plugin_3c5bce70 === 'function') {
+    await nuxt_plugin_plugin_3c5bce70(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_plugin_4ecb7f1d === 'function') {
-    await nuxt_plugin_plugin_4ecb7f1d(app.context, inject)
+  if (typeof nuxt_plugin_plugin_1ba2dbb0 === 'function') {
+    await nuxt_plugin_plugin_1ba2dbb0(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_188276ea === 'function') {
-    await nuxt_plugin_axios_188276ea(app.context, inject)
+  if (typeof nuxt_plugin_axios_2205a044 === 'function') {
+    await nuxt_plugin_axios_2205a044(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_vuescrollto_71831f1e === 'function') {
-    await nuxt_plugin_vuescrollto_71831f1e(app.context, inject)
+  if (process.client && typeof nuxt_plugin_vuescrollto_7f703f2a === 'function') {
+    await nuxt_plugin_vuescrollto_7f703f2a(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_distplugin1f96797e_30c14ef2 === 'function') {
-    await nuxt_plugin_distplugin1f96797e_30c14ef2(app.context, inject)
+  if (typeof nuxt_plugin_distplugin1f96797e_648a844c === 'function') {
+    await nuxt_plugin_distplugin1f96797e_648a844c(app.context, inject)
   }
 
   if (typeof nuxt_plugin_particles_1e1352c0 === 'function') {
@@ -233,8 +233,8 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_vuepdfembed_366df154(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_meta_44d27d6f === 'function') {
-    await nuxt_plugin_meta_44d27d6f(app.context, inject)
+  if (typeof nuxt_plugin_meta_2aede2c2 === 'function') {
+    await nuxt_plugin_meta_2aede2c2(app.context, inject)
   }
 
   // Lock enablePreview in context

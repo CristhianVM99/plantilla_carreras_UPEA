@@ -1,9 +1,9 @@
 export default {  
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "Vie ",
+    title: "UPEA | Universidad Publica de El Alto. ",
     htmlAttrs: {
-      lang: "en",
+      lang: "es",
     },
     meta: [
       { charset: "utf-8" },
@@ -44,7 +44,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['@/assets/css/dark.css',],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -59,7 +59,7 @@ export default {
       src: "~/plugins/vueTyper.js",
       mode: "client",
     },    
-    { src: '~/plugins/vue-pdf', mode: 'client' },
+    { src: '~/plugins/vue-pdf-embed.js', mode: 'client' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

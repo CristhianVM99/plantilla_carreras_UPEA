@@ -49,11 +49,12 @@ export default {
       url_api : process.env.APP_ROOT_API,
       carrera_titulo: useInstitucionStore().institucion.institucion_nombre,
       institucion_logo : useInstitucionStore().institucion.institucion_logo,
+      carrera_colores : useInstitucionStore().institucion.colorinstitucion,
     }
   },
   head() {
     return {
-      title: this.carrera_titulo+' | '+this.$route.params.categoria,
+      title: this.carrera_titulo+' | Sobre Nosotros',
       link: [
         { rel: 'icon', type:"image/x-icon", href: this.url_api + '/InstitucionUpea/' + this.institucion_logo }
       ]
@@ -65,8 +66,27 @@ export default {
         this.img_about = `${this.url_api}/InstitucionUpea/Portada/${this.foto.portada_imagen}`
       }
     },
+    setColor(){
+        if (Object.keys(this.carrera_colores).length != 0) {
+        if (process.client) { // Verifica si el código se está ejecutando en el lado del cliente
+          document.documentElement.style.setProperty(
+            '--color-primario',
+            this.carrera_colores[0].color_primario
+          );
+          document.documentElement.style.setProperty(
+            '--color-secundario',
+            this.carrera_colores[0].color_primario
+          );
+          document.documentElement.style.setProperty(
+            '--color-terciario',
+            this.carrera_colores[0].color_secundario
+          );
+        }
+        }
+    }, 
     createdComponent(){
       this.setFoto()
+      this.setColor()
     }
   },
   created() {

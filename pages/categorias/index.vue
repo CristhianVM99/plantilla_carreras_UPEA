@@ -39,8 +39,35 @@
             url_api : process.env.APP_ROOT_API,
             title_categories : useInstitucionStore().title_categories,
             text_categories : useInstitucionStore().text_categories,
-            textBackground_categories : useInstitucionStore().textBackground_categories
+            textBackground_categories : useInstitucionStore().textBackground_categories,
+            carrera_colores : useInstitucionStore().institucion.colorinstitucion,
         }
+    },
+    methods: {
+      setColor(){
+        if (Object.keys(this.carrera_colores).length != 0) {
+        if (process.client) { // Verifica si el código se está ejecutando en el lado del cliente
+          document.documentElement.style.setProperty(
+            '--color-primario',
+            this.carrera_colores[0].color_primario
+          );
+          document.documentElement.style.setProperty(
+            '--color-secundario',
+            this.carrera_colores[0].color_primario
+          );
+          document.documentElement.style.setProperty(
+            '--color-terciario',
+            this.carrera_colores[0].color_secundario
+          );
+        }
+        }
+      }, 
+      createdComponent(){
+        this.setColor()
+      }
+    },
+    created() {
+      this.createdComponent()
     },
     head() {
       return {

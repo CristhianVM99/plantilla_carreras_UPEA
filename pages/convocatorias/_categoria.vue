@@ -80,11 +80,30 @@
         carrera_titulo: useInstitucionStore().institucion.institucion_nombre,
         institucion_logo : useInstitucionStore().institucion.institucion_logo,
         colection: null,
-        message: 'No hay Registros...'
+        message: 'No hay Registros...',
+        carrera_colores : useInstitucionStore().institucion.colorinstitucion,
       };
     },
-    methods: {          
-      createdComponent(){
+    methods: {   
+      setColor(){
+        if (Object.keys(this.carrera_colores).length != 0) {
+        if (process.client) { // Verifica si el código se está ejecutando en el lado del cliente
+          document.documentElement.style.setProperty(
+            '--color-primario',
+            this.carrera_colores[0].color_primario
+          );
+          document.documentElement.style.setProperty(
+            '--color-secundario',
+            this.carrera_colores[0].color_primario
+          );
+          document.documentElement.style.setProperty(
+            '--color-terciario',
+            this.carrera_colores[0].color_secundario
+          );
+        }
+        }
+      },        
+      getCategoria(){
         switch (this.$route.params.categoria) {
           case "comunicados":
             this.colection = useInstitucionStore().carrera_comunicados
@@ -122,6 +141,10 @@
           default:
             break;
         }
+      },
+      createdComponent(){
+        this.setColor()
+        this.getCategoria()
       }
     },
     created() {

@@ -66,8 +66,7 @@
             useInstitucion.asignarEventos(carrera_eventos)
             useInstitucion.asignarVideos(carrera_videos)
             useInstitucion.asignarFotosPagina(fotosPagina)
-            useInstitucion.asignarFotosPortada(fotosPortada)
-            return { ComunicadosFilter, comunicados, convocatorias, avisos, fotosPortada, fotosPagina }
+            useInstitucion.asignarFotosPortada(fotosPortada)            
         } catch (e) {
             console.error("error",e)
         }
@@ -92,29 +91,28 @@
     methods: {
       setColor(){
         if (Object.keys(this.carrera_colores).length != 0) {
+        if (process.client) { // Verifica si el código se está ejecutando en el lado del cliente
           document.documentElement.style.setProperty(
-            '--color-primario',this.carrera_colores[0].color_primario            
-          )
+            '--color-primario',
+            this.carrera_colores[0].color_primario
+          );
           document.documentElement.style.setProperty(
-            '--color-secundario',this.carrera_colores[0].color_secundario
-          )
+            '--color-secundario',
+            this.carrera_colores[0].color_primario
+          );
           document.documentElement.style.setProperty(
-            '--color-terciario',this.carrera_colores[0].color_terciario
-          )
+            '--color-terciario',
+            this.carrera_colores[0].color_secundario
+          );
+        }
         }
       },      
       createdComponent(){
         this.setColor()        
       }
-    },
-    mounted() {    
-      //this.createdComponent()
-    },
-    created() {
-      console.log("fotos portada")
-      console.log(this.fotosPortada)
-      console.log("fotos pagina")
-      console.log(this.fotosPagina)
+    },    
+    created() {   
+        this.createdComponent()
     },
     mounted() {
       if (this.$refs.fixedSlider.$el && this.$refs.MainContent) {

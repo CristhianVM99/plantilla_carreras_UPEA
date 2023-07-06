@@ -13,18 +13,12 @@
               <b class="back-color">{{ carrera_nombre }}</b>.
             </h2>
           </div>
+        </div>            
+        <div>
+          <client-only>
+            <pdf-embed :source="url_api + '/InstitucionUpea/' + carrera_organigrama" :page="1" />
+          </client-only>
         </div>
-
-        <div class="col-md-6 col-lg-3">
-          <vue-pdf
-            ref="pdf"
-            :src="url_api + '/InstitucionUpea/' + carrera_organigrama"
-            :page="1"
-            :original-size="true"
-            class="pdf-viewer"
-          ></vue-pdf>          
-        </div>
-
         <div class="col-md-4 col-lg-3 valign">
           <a
             :href="url_api + '/InstitucionUpea/' + carrera_organigrama"
@@ -36,25 +30,14 @@
           </a>
         </div>
       </div>
-    </div>
+    </div>    
   </section>
 </template>
 
 <script>
 import { useInstitucionStore } from '@/store/store'
 export default {
-  props: ["img"],
-  async asyncData({ $axios }) {        
-        try {         
-            const useInstitucion = useInstitucionStore()     
-            if( useInstitucionStore().institucion == null || useInstitucionStore().carrera_links_externos == null){
-              const institucion = await $axios.$get('/api/InstitucionUPEA/' + process.env.APP_ID_INSTITUCION)              
-              useInstitucion.asignarInstitucion(institucion.Descripcion)              
-            }            
-        } catch (e) {
-            console.error("error",e)
-        }
-    },  
+  props: ["img"],  
   data() {
     return {
       url_api : process.env.APP_ROOT_API, 

@@ -1104,13 +1104,12 @@
           </div>
           <div class="post" v-if="tipo == 'gacetas'">
             <div class="img">
-              <vue-pdf
-                  ref="pdf"
-                  :src="url_api + '/Gaceta/' + colection[0].gaceta_documento"
+              <client-only>
+                <pdf-embed
+                  :source="url_api + '/Gaceta/' + colection[0].gaceta_documento"
                   :page="1"
-                  :original-size="true"
-                  class="pdf-viewer"
-                ></vue-pdf>
+                />
+              </client-only>
             </div>
             <div class="content pt-60">
               <div class="row justify-content-center">

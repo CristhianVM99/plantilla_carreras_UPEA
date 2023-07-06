@@ -431,13 +431,12 @@
           <div v-for="gac in colection" class="col-lg-4" :key="encryptID(gac.gaceta_id)">
             <div class="item mb-80 wow fadeInUp" data-wow-delay=".3s">              
               <div class="img">                
-                <vue-pdf
-                  ref="pdf"
-                  :src="url_api + '/Gaceta/' + gac.gaceta_documento"
-                  :page="1"
-                  :original-size="true"
-                  class="pdf-viewer"
-                ></vue-pdf>
+                <client-only>
+                  <pdf-embed
+                    :source="url_api + '/Gaceta/' + gac.gaceta_documento"
+                    :page="1"
+                  />
+                </client-only>
               </div>
               <div class="cont">
                 <div>
@@ -686,10 +685,7 @@ export default {
       const año = fechaObjeto.getFullYear();
       return `${dia}/${mes}/${año}`;
     },
-  },      
-  created() {
-    console.log(Object.keys(this.colection).length)
-  },
+  },        
 };
 </script>
 

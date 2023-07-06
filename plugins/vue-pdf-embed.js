@@ -1,5 +1,4 @@
-//import Vue from 'vue'
-//import VuePdfEmbed from 'vue-pdf-embed'
+import Vue from 'vue';
+import VuePdfEmbed from 'vue-pdf-embed/dist/vue2-pdf-embed';
 
-//Vue.component('vue-pdf-embed', VuePdfEmbed)
-//Vue.use(VuePdfEmbed)
+Vue.component('pdf-embed', VuePdfEmbed);
